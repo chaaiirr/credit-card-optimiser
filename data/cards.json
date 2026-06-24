@@ -1,0 +1,277 @@
+[
+  {
+    "id": "hsbc_revolution",
+    "name": "HSBC Revolution Credit Card",
+    "annual_fee": 0.0,
+    "min_income": 30000,
+    "min_spend": 0,
+    "overall_cap": 999999,
+    "affiliate_url": "https://www.moneysmart.sg/credit-cards/hsbc-revolution-credit-card",
+    "rates": {
+      "dining": 0.04,
+      "groceries": 0.04,
+      "online": 0.04,
+      "transport": 0.04,
+      "utilities": 0.004,
+      "travel": 0.004
+    },
+    "category_caps": {
+      "dining": 999999,
+      "groceries": 999999,
+      "online": 999999,
+      "transport": 999999,
+      "utilities": 999999,
+      "travel": 999999
+    }
+  },
+  {
+    "id": "citi_premiermiles",
+    "name": "Citi PremierMiles Card",
+    "annual_fee": 196.2,
+    "min_income": 30000,
+    "min_spend": 0,
+    "overall_cap": 999999,
+    "affiliate_url": "https://www.moneysmart.sg/credit-cards/citi-premiermiles-card",
+    "rates": {
+      "dining": 0.012,
+      "groceries": 0.012,
+      "online": 0.012,
+      "transport": 0.012,
+      "utilities": 0.012,
+      "travel": 0.022
+    },
+    "category_caps": {
+      "dining": 999999,
+      "groceries": 999999,
+      "online": 999999,
+      "transport": 999999,
+      "utilities": 999999,
+      "travel": 999999
+    }
+  },
+  {
+    "id": "citi_rewards",
+    "name": "Citi Rewards Card",
+    "annual_fee": 196.2,
+    "min_income": 30000,
+    "min_spend": 0,
+    "overall_cap": 999999,
+    "affiliate_url": "https://www.moneysmart.sg/credit-cards/citi-rewards-card",
+    "rates": {
+      "dining": 0.04,
+      "groceries": 0.04,
+      "online": 0.04,
+      "transport": 0.04,
+      "utilities": 0.004,
+      "travel": 0.004
+    },
+    "category_caps": {
+      "dining": 999999,
+      "groceries": 999999,
+      "online": 999999,
+      "transport": 999999,
+      "utilities": 999999,
+      "travel": 999999
+    }
+  },
+  {
+    "id": "ocbc_365",
+    "name": "OCBC 365 Credit Card",
+    "annual_fee": 196.2,
+    "min_income": 30000,
+    "min_spend": 1600,
+    "overall_cap": 160,
+    "affiliate_url": "https://www.moneysmart.sg/credit-cards/ocbc-365-credit-card",
+    "rates": {
+      "dining": 0.05,
+      "groceries": 0.003,
+      "online": 0.003,
+      "transport": 0.06,
+      "utilities": 0.003,
+      "travel": 0.003
+    },
+    "category_caps": {
+      "dining": 999999,
+      "groceries": 999999,
+      "online": 999999,
+      "transport": 999999,
+      "utilities": 999999,
+      "travel": 999999
+    }
+  },
+  {
+    "id": "hsbc_liveplus",
+    "name": "HSBC Live+ Card",
+    "annual_fee": 196.2,
+    "min_income": 30000,
+    "min_spend": 0,
+    "overall_cap": 999999,
+    "affiliate_url": "https://www.moneysmart.sg/credit-cards/hsbc-live-plus-credit-card",
+    "rates": {
+      "dining": 0.08,
+      "groceries": 0.003,
+      "online": 0.08,
+      "transport": 0.05,
+      "utilities": 0.003,
+      "travel": 0.003
+    },
+    "category_caps": {
+      "dining": 999999,
+      "groceries": 999999,
+      "online": 999999,
+      "transport": 999999,
+      "utilities": 999999,
+      "travel": 999999
+    }
+  },
+  {
+    "id": "citi_cashbackplus",
+    "name": "Citi Cash Back+ Card",
+    "annual_fee": 196.2,
+    "min_income": 30000,
+    "min_spend": 0,
+    "overall_cap": 999999,
+    "affiliate_url": "https://www.moneysmart.sg/credit-cards/citi-cash-back-plus-card",
+    "rates": {
+      "dining": 0.016,
+      "groceries": 0.016,
+      "online": 0.016,
+      "transport": 0.016,
+      "utilities": 0.016,
+      "travel": 0.016
+    },
+    "category_caps": {
+      "dining": 999999,
+      "groceries": 999999,
+      "online": 999999,
+      "transport": 999999,
+      "utilities": 999999,
+      "travel": 999999
+    }
+  },
+  {
+    "id": "uob_evol",
+    "name": "UOB EVOL Credit Card",
+    "annual_fee": 0.0,
+    "min_income": 30000,
+    "min_spend": 800,
+    "overall_cap": 999999,
+    "affiliate_url": "https://www.moneysmart.sg/credit-cards/uob-evol-credit-card",
+    "rates": {
+      "dining": 0.003,
+      "groceries": 0.003,
+      "online": 0.10,
+      "transport": 0.10,
+      "utilities": 0.10,
+      "travel": 0.003
+    },
+    "category_caps": {
+      "dining": 999999,
+      "groceries": 999999,
+      "online": 999999,
+      "transport": 999999,
+      "utilities": 999999,
+      "travel": 999999
+    }
+  },
+  {
+    "id": "sc_simplycash",
+    "name": "Standard Chartered Simply Cash Credit Card",
+    "annual_fee": 196.2,
+    "min_income": 30000,
+    "min_spend": 0,
+    "overall_cap": 999999,
+    "affiliate_url": "https://www.moneysmart.sg/credit-cards/standard-chartered-simply-cash-credit-card",
+    "rates": {
+      "dining": 0.015,
+      "groceries": 0.015,
+      "online": 0.015,
+      "transport": 0.015,
+      "utilities": 0.015,
+      "travel": 0.015
+    },
+    "category_caps": {
+      "dining": 999999,
+      "groceries": 999999,
+      "online": 999999,
+      "transport": 999999,
+      "utilities": 999999,
+      "travel": 999999
+    }
+  },
+  {
+    "id": "citi_smrt",
+    "name": "Citi SMRT Card",
+    "annual_fee": 196.2,
+    "min_income": 30000,
+    "min_spend": 500,
+    "overall_cap": 999999,
+    "affiliate_url": "https://www.moneysmart.sg/credit-cards/citi-smrt-card",
+    "rates": {
+      "dining": 0.003,
+      "groceries": 0.05,
+      "online": 0.05,
+      "transport": 0.05,
+      "utilities": 0.003,
+      "travel": 0.003
+    },
+    "category_caps": {
+      "dining": 999999,
+      "groceries": 999999,
+      "online": 999999,
+      "transport": 999999,
+      "utilities": 999999,
+      "travel": 999999
+    }
+  },
+  {
+    "id": "trust_cashback",
+    "name": "Cashback Credit Card by Trust",
+    "annual_fee": 0.0,
+    "min_income": 0,
+    "min_spend": 0,
+    "overall_cap": 999999,
+    "affiliate_url": "https://www.moneysmart.sg/credit-cards/trust-bank-cashback-credit-card",
+    "rates": {
+      "dining": 0.01,
+      "groceries": 0.15,
+      "online": 0.01,
+      "transport": 0.01,
+      "utilities": 0.01,
+      "travel": 0.01
+    },
+    "category_caps": {
+      "dining": 999999,
+      "groceries": 999999,
+      "online": 999999,
+      "transport": 999999,
+      "utilities": 999999,
+      "travel": 999999
+    }
+  },
+  {
+    "id": "hsbc_travelone",
+    "name": "HSBC TravelOne Card",
+    "annual_fee": 196.2,
+    "min_income": 30000,
+    "min_spend": 0,
+    "overall_cap": 999999,
+    "affiliate_url": "https://www.moneysmart.sg/credit-cards/hsbc-travelone-credit-card",
+    "rates": {
+      "dining": 0.012,
+      "groceries": 0.012,
+      "online": 0.012,
+      "transport": 0.012,
+      "utilities": 0.012,
+      "travel": 0.024
+    },
+    "category_caps": {
+      "dining": 999999,
+      "groceries": 999999,
+      "online": 999999,
+      "transport": 999999,
+      "utilities": 999999,
+      "travel": 999999
+    }
+  }
+]
