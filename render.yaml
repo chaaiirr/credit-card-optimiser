@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: sg-card-optimizer
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      # Gurobi Web Licence Service credentials
+      # Get a free academic WLS licence at gurobi.com/academia
+      - key: GRB_WLSACCESSID
+        sync: false   # set manually in Render dashboard
+      - key: GRB_WLSSECRET
+        sync: false
+      - key: GRB_LICENSEID
+        sync: false
