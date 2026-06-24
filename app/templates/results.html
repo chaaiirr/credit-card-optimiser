@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="/" class="text-blue-600 text-sm mb-6 inline-block">&larr; Try different inputs</a>
+
+<h1 class="text-2xl font-bold mb-1">Your optimal wallet</h1>
+<p class="text-gray-400 text-sm mb-6">Optimised over a 12-month horizon. Rewards are estimated based on your spending profile.</p>
+
+<!-- Summary stats -->
+<div class="grid grid-cols-3 gap-4 mb-8">
+  <div class="bg-white rounded-xl shadow p-4 text-center">
+    <p class="text-xs text-gray-500 mb-1">Monthly Reward</p>
+    <p class="text-2xl font-bold text-green-600">S${{ "%.2f"|format(result.monthly_reward) }}</p>
+  </div>
+  <div class="bg-white rounded-xl shadow p-4 text-center">
+    <p class="text-xs text-gray-500 mb-1">Annual Fees</p>
+    <p class="text-2xl font-bold text-red-500">S${{ "%.2f"|format(result.annual_fee) }}</p>
+  </div>
+  <div class="bg-white rounded-xl shadow p-4 text-center">
+    <p class="text-xs text-gray-500 mb-1">Net Annual Reward</p>
+    <p class="text-2xl font-bold text-blue-700">S${{ "%.2f"|format(result.net_annual_reward) }}</p>
+  </div>
+</div>
+
+<!-- Cards to hold -->
+{% if result.wallet %}
+<h2 class="font-semibold text-base mb-3">Cards to hold</h2>
+<div class="space-y-3 mb-8">
+  {% for card_id in result.wallet %}
+  {% set card = cards_by_id[card_id] %}
+  {% if card %}
+  <div class="bg-white rounded-xl shadow p-4 flex justify-between items-center">
+    <div>
+      <p class="font-semibold text-sm">{{ card.name }}</p>
+      <p class="text-xs text-gray-500 mt-0.5">
+        Annual fee: S${{ "%.0f"|format(card.annual_fee) }}
+        &middot; Min spend: S${{ "%.0f"|format(card.min_spend) }}/mo
+      </p>
+    </div>
+    {% if card.affiliate_url %}
+    <a
+      href="{{ card.affiliate_url }}"
+      target="_blank"
+      rel="noopener"
+      class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition whitespace-nowrap"
+    >
+      Apply now &rarr;
+    </a>
+    {% endif %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+{% else %}
+<p class="text-gray-500 mb-8">No cards worth holding at this spend level — rewards would not cover annual fees. Consider increasing your spending.</p>
+{% endif %}
+
+<!-- Category allocation table -->
+<h2 class="font-semibold text-base mb-3">Which card to use per category</h2>
+<div class="bg-white rounded-xl shadow overflow-hidden mb-4">
+  <table class="w-full text-sm">
+    <thead class="bg-gray-50 border-b text-xs text-gray-500 uppercase tracking-wide">
+      <tr>
+        <th class="text-left px-4 py-3">Category</th>
+        <th class="text-left px-4 py-3">Your Spend</th>
+        <th class="text-left px-4 py-3">Use This Card</th>
+        <th class="text-right px-4 py-3">Monthly Reward</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cat in categories %}
+      {% set card_id = result.allocation.get(cat, "no_card") %}
+      {% set card = cards_by_id.get(card_id) %}
+      {% set spend = monthly_spend[cat] %}
+      <tr class="border-b last:border-0 hover:bg-gray-50">
+        <td class="px-4 py-3 capitalize font-medium">{{ cat }}</td>
+        <td class="px-4 py-3 text-gray-600">S${{ "%.0f"|format(spend) }}</td>
+        <td class="px-4 py-3">
+          {% if card %}{{ card.name }}{% else %}&mdash;{% endif %}
+        </td>
+        <td class="px-4 py-3 text-right text-green-600 font-medium">
+          {% if card and spend > 0 %}
+            S${{ "%.2f"|format([spend * card.rates[cat], card.category_caps[cat]] | min) }}
+          {% else %}
+            S$0.00
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<p class="text-xs text-gray-400">Rewards shown are estimates. Actual rewards depend on your bank's terms, earn caps, and eligible transaction types. Always verify before applying.</p>
+{% endblock %}
