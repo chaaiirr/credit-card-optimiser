@@ -1,3 +1,4 @@
+import os
 import gurobipy as gp
 from gurobipy import GRB
 from pydantic import BaseModel
@@ -43,9 +44,17 @@ def solve(
     total_spend = sum(monthly_spend[k] for k in K)
 
     # Create Model
-    model = gp.Model("card_optimizer")
-    model.Params.OutputFlag = 0  # suppress solver output
-    model.Params.TimeLimit = 10  # in seconds
+    env = gp.Env(empty=True)
+    wls_access_id = os.environ.get("GRB_WLSACCESSID", "")
+    wls_secret = os.environ.get("GRB_WLSSECRET", "")
+    license_id = os.environ.get("GRB_LICENSEID", "0")
+    if wls_access_id:
+        env.setParam("WLSACCESSID", wls_access_id)
+        env.setParam("WLSSECRET", wls_secret)
+        env.setParam("LICENSEID", int(license_id))
+    env.setParam("OutputFlag", 0)
+    env.start()
+    model = gp.Model(env=env)
 
     # Decision Variables
     z = model.addVars(C, vtype=GRB.BINARY, name="z")                   # 1 if card c is held
