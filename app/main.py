@@ -48,12 +48,3 @@ def optimize(
 def health():
     return {"status": "ok"}
 
-
-@app.get("/debug-env")
-def debug_env():
-    import os
-    return {
-        "GRB_LICENSEID": os.environ.get("GRB_LICENSEID", "NOT SET"),
-        "GRB_WLSACCESSID": os.environ.get("GRB_WLSACCESSID", "NOT SET"),
-        "GRB_WLSSECRET": "SET" if os.environ.get("GRB_WLSSECRET") else "NOT SET",
-    }
